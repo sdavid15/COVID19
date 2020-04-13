@@ -1,0 +1,421 @@
+---
+title: "COVID19"
+author: "Shyni"
+date: "3/27/2020"
+output: html_document
+---
+
+[ [U.S. State-Level Data](us-states.csv) | [U.S. County-Level Data](us-counties.csv) ]
+
+The New York Times is releasing a series of data files with cumulative counts of coronavirus cases in the United States, at the state and county level, over time. We are compiling this time series data from state and local governments and health departments in an attempt to provide a complete record of the ongoing outbreak.
+
+Since late January, The Times has tracked cases of coronavirus in real time as they were identified after testing. Because of the widespread shortage of testing, however, the data is necessarily limited in the picture it presents of the outbreak.
+
+We have used this data to power our [maps](https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html) and [reporting](https://www.nytimes.com/coronavirus) tracking the outbreak, and it is now being made available to the public in response to requests from researchers, scientists and government officials who would like access to the data to better understand the outbreak.
+
+The data begins with the first reported coronavirus case in Washington State on Jan. 21, 2020. We will publish regular updates to the data in this repository. 
+
+## United States Data
+
+Data on cumulative coronavirus cases and deaths can be found in two files for states and counties.
+
+Each row of data reports cumulative counts based on our best reporting up to the moment we publish an update. We do our best to revise earlier entries in the data when we receive new information.
+
+### State-Level Data
+
+State-level data can be found in the [states.csv](us-states.csv) file.
+
+```
+date,state,fips,cases,deaths
+2020-01-21,Washington,53,1,0
+...
+```
+### County-Level Data
+
+County-level data can be found in the [counties.csv](us-counties.csv) file. For counties, we provide a FIPS code.
+
+```
+date,county,state,fips,cases,deaths
+2020-01-21,Snohomish,Washington,53061,1,0
+...
+```
+
+In some cases, the geographies where cases are reported do not map to standard county boundaries. See the list of [geographic exceptions](#geographic-exceptions) for more detail on these.
+
+## Methodology and Definitions
+
+The data is the product of dozens of journalists working across several time zones to monitor news conferences, analyze data releases and seek clarification from public officials on how they categorize cases. 
+
+It is also a response to a fragmented American public health system in which overwhelmed public servants at the state, county and territorial level have sometimes struggled to report information accurately, consistently and speedily. On several occasions, officials have corrected information hours or days after first reporting it. At times, cases have disappeared from a local government database, or officials have moved a patient first identified in one state or county to another, often with no explanation. In those instances, which have become more common as the number of cases has grown, our team has made every effort to update the data to reflect the most current, accurate information while ensuring that every known case is counted.
+
+When the information is available, we count patients where they are being treated, not necessarily where they live.
+
+In most instances, the process of recording cases has been straightforward. But because of the patchwork of reporting methods for this data across more than 50 state and territorial governments and hundreds of local health departments, our journalists sometimes had to make difficult interpretations about how to count and record cases.
+
+For those reasons, our data will in some cases not exactly match with the information reported by states and counties. Those differences include these cases: When the federal government arranged flights to the United States for Americans exposed to the coronavirus in China and Japan, our team recorded those cases in the states where the patients subsequently were treated, even though local health departments generally did not. When a resident of Florida died in Los Angeles, we recorded her death as having occurred in California rather than Florida, though officials in Florida counted her case in their own records. And when officials in some states reported new cases without immediately identifying where the patients were being treated, we attempted to add information about their locations later, once it became available.
+
+* Confirmed Cases
+
+Confirmed cases are patients who test positive for the coronavirus. We consider a case confirmed when it is reported by a federal, state, territorial or local government agency.
+
+* Dates
+
+For each date, we show the cumulative number of confirmed cases and deaths as reported that day in that county or state. All cases and deaths are counted on the date they are first announced.
+
+* Counties
+
+In some instances, we report data from multiple counties or other non-county geographies as a single county. For instance, we report a single value for New York City, comprising the cases for New York, Kings, Queens, Bronx and Richmond Counties. In these instances the FIPS code field will be empty. (We may assign FIPS codes to these geographies in the future.) See the list of [geographic exceptions](#geographic-exceptions). 
+
+Cities like St. Louis and Baltimore that are administered separately from an adjacent county of the same name are counted separately.
+
+* “Unknown” Counties
+
+Many state health departments choose to report cases separately when the patient’s county of residence is unknown or pending determination. In these instances, we record the county name as “Unknown.” As more information about these cases becomes available, the cumulative number of cases in “Unknown” counties may fluctuate.
+
+Sometimes, cases are first reported in one county and then moved to another county. As a result, the cumulative number of cases may change for a given county.
+
+### Geographic Exceptions
+
+* New York City
+
+All cases for the five boroughs of New York City (New York, Kings, Queens, Bronx and Richmond counties) are assigned to a single area called New York City.
+
+* Kansas City, Mo.
+
+Four counties (Cass, Clay, Jackson and Platte) overlap the municipality of Kansas City, Mo. The cases and deaths that we show for these four counties are only for the portions exclusive of Kansas City. Cases and deaths for Kansas City are reported as their own line.
+
+* Joplin, Mo.
+
+Joplin is reported separately from Jasper and Newton Counties. 
+
+* Chicago
+
+All cases and deaths for Chicago are reported as part of Cook County. 
+
+
+## License and Attribution
+
+In general, we are making this data publicly available for broad, noncommercial public use including by medical and public health researchers, policymakers, analysts and local news media.
+
+If you use this data, you must attribute it to “The New York Times” in any publication. If you would like a more expanded description of the data, you could say “Data from The New York Times, based on reports from state and local health agencies.”
+
+If you use it in an online presentation, we would appreciate it if you would link to our U.S. tracking page at [https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html](https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html).
+
+If you use this data, please let us know at covid-data@nytimes.com and indicate if you would be willing to talk to a reporter about your research.
+
+See our [LICENSE](LICENSE) for the full terms of use for this data.
+
+
+## Contact Us
+
+If you have questions about the data or licensing conditions, please contact us at:
+
+covid-data@nytimes.com
+
+
+## Contributors
+
+Mitch Smith, Karen Yourish, Sarah Almukhtar, Keith Collins, Danielle Ivory and Amy Harmon have been leading our U.S. data collection efforts.
+
+Data has also been compiled by Jordan Allen, Jeff Arnold, Aliza Aufrichtig, Mike Baker, Matthew Bloch, Nicholas Bogel-Burroughs, Maddie Burakoff, Christopher Calabrese, Andrew Chavez, Robert Chiarito, Carmen Cincotti, Alastair Coote, Matt Craig, John Eligon, Tiff Fehr, Andrew Fischer, Matt Furber, Rich Harris, Lauryn Higgins, Jake Holland, Will Houp, Jon Huang, Danya Issawi, Jacob LaGesse, Patricia Mazzei, Allison McCann, Jesse McKinley, Miles McKinley, Sarah Mervosh, Andrea Michelson, Blacki Migliozzi, Steven Moity, Richard A. Oppel Jr., Jugal K. Patel, Nina Pavlich, Azi Paybarah, Sean Plambeck, Scott Reinhard, Thomas Rivas, Michael Robles, Alison Saldanha, Alex Schwartz, Libby Seline, Shelly Seroussi, Rachel Shorey, Anjali Singhvi, Charlie Smart, Ben Smithgall, Steven Speicher, Michael Strickland, Albert Sun, Tracey Tully, Maura Turcotte, Miles Watkins, Jeremy White, Josh Williams and Jin Wu.
+
+
+Library 
+```{r}
+library(readr)
+library(readxl)
+library(dplyr)
+library(tidyverse)
+library("sqldf")
+#install.packages("USAboundaries")
+library(USAboundaries)
+
+#ANIMATED VISUALIZATION
+#install.packages("gganimate")
+library(gganimate)
+#install.packages("gapminder")
+library(gapminder)
+#install.packages("gifski")
+library(gifski)
+
+#INTERACTIVE VISUALIZATION
+#install.packages("plotly")
+library(plotly)
+ 
+```
+
+Load data
+```{r}
+us_counties_27M <- read_csv("covid-19-data-master/us-counties mar 27.csv")
+us_counties_12A <- read_csv("covid-19-data-master/us-counties.csv")
+
+#get the dates greater than Mar 27th
+#sqldf("select * from us_counties_27M order by date desc ")
+ us_counties_12A$date <- as.Date(us_counties_12A$date, format= "%Y-%m-%d")
+ df <- us_counties_12A %>% filter(date > "2020-03-25")
+ 
+ # add that to March 27th file
+ us_counties <- rbind(us_counties_27M, df)
+
+#us_states <- read_csv("covid-19-data-master/us-states.csv")
+census_2019 <- read_excel("co-est2019-annres.xlsx")
+#USstate <- read_excel("USstate.xlsx")
+ 
+#to get directly from git hub 
+#library(httr)
+
+#nuts <-read.csv(text=GET("https://raw.githubusercontent.com/nytimes/covid-19-data/us-counties.csv "), skip=7, header=T)
+
+#https://raw.githubusercontent.com/nytimes/covid-19-data/cf5c674c116be8032f72c41bb5299cff97812a57/us-counties#.csv
+```
+
+
+
+Data Wrangling
+```{r}
+colnames(us_counties) <- c("date", "county", "state", "fips", "cases", "deaths")
+colnames(census_2019) <- c("County", "Population")
+census_01 <- census_2019[-c(1,2),]
+
+#remove leading period
+ census_01$County <- gsub("[.]","",census_01$County) 
+ 
+ #separating county and state
+ census_02 <- census_01 %>% separate(County, c("county", "state"), sep =",")
+ census_02$county <- gsub("County","",census_02$county) 
+ census_02$county  <- gsub("[[:space:]]", "", census_02$county) #remove white spaces
+census_02$state  <- gsub("[[:space:]]", "", census_02$state) #remove white spaces
+us_counties$state  <- gsub("[[:space:]]", "", us_counties$state) #remove white spaces 
+us_counties$county  <- gsub("[[:space:]]", "", us_counties$county) #remove white spaces 
+#date split as year, month and day
+us_counties_01  <- separate(us_counties,  date, c("CYear", "CMonth", "CDay"), sep = "-", remove = FALSE)
+us_counties_01$CYear <- as.numeric(us_counties_01$CYear)
+us_counties_01$CMonth <- as.numeric(us_counties_01$CMonth)
+us_counties_01$CDay <- as.numeric(us_counties_01$CDay)
+
+#join us_counties and census_02
+ census_02_01 <- census_02 %>%  filter(!is.na(Population))
+  
+ census_03 <-  us_counties_01 %>% inner_join(census_02_01, by=c("state", "county"))
+ 
+ #get the percentage of cases and deaths
+ census_04 <- census_03 %>% mutate(cases_percent = round(cases/Population *100,2), death_percent = round(deaths/Population * 100,4))
+ 
+ 
+ 
+ #group by state 
+ census_05 <- census_04 %>% group_by(CMonth,state) %>% summarise(Tot_cases = sum(cases), Tot_deaths = sum(deaths), Tot_population = sum(Population))
+
+ census_06 <- census_05 %>% mutate(Tot_cases_percent = round(Tot_cases/Tot_population *100,2), Tot_deaths_percent = round(Tot_deaths/Tot_population * 100,4))
+ 
+ # split by Regions
+  usstates <- us_states()
+  usstates_01 <- usstates[, c(10,11)]
+  colnames(usstates_01) <- c("state", "ST_abbr")
+  
+  census_07 <- census_06 %>% inner_join(usstates_01, by = c("state"))
+ #Western Region
+  western_states <- c("WA", "MT", "WY", "ID", "OR", "CA", "NV", "UT", "CO", "NM", "AZ")
+  pacific <- c("WA", "OR", "CA")
+  MOUNTAIN <- c( "MT", "WY", "ID", "NV", "UT", "CO", "NM", "AZ")
+  mid_west <- c("ND", "SD", "NE", "KS", "MO", "IA", "MN", "WI")
+  
+  census_west <- census_07 %>% filter(ST_abbr %in%  western_states)
+  mid_west <- c("ND", "SD", "NE", "KS", "MO", "IA", "MN", "")
+ 
+```
+
+
+Animation 
+```{r}
+p <- ggplot(census_04, aes(Population, CMonth, size=cases, fill=state)) + geom_point(alpha=.5, shape=21, color=gray(0.3)) +
+#+ scale_fill_manual(values=c("#33D9EB", "#90ED37", "#FF7185", "#FFE938","#FF7185")) +
+scale_size(range=c(1,16))  + scale_x_continuous(breaks=seq(100000,10040000,1000000)) +
+labs(title="Date: {frame_time}", x="Population density", y="Month") + 
+  theme(panel.grid.minor = element_blank()) +  theme(plot.title = element_text(size =10),axis.text.x = element_text(size =7,angle = 65, hjust = 1) )+ ggtitle("COVID 19 in US ")+
+#only addition is transition time and aes
+  transition_time(date) + ease_aes("linear") +shadow_wake(.9, alpha = .2)#creates trail of images to trace data point 
+
+
+animate(p, width=1200, height=600, res=100) 
+
+ 
+
+ggplotly(p)
+
+```
+
+
+
+```{r}
+#install.packages("usmap")
+library(usmap)
+library(ggplot2)
+ 
+
+  plot_usmap(data = census_04, regions = "states", values = "cases", color = "white") + 
+  scale_fill_continuous(name = "COVID-cases", label = scales::comma) + 
+  theme(legend.position = "right") + ggtitle("COVID19 in US ")   
+
+ #####
+states <- plot_usmap("states", 
+                     color = "red",
+                     fill = alpha(0.01)) 
+counties <- plot_usmap(data = census_04, 
+                       values = "cases",
+                       color = "black",
+                       size = 0.1)
+
+ggplot() +  
+  geom_polygon(data=counties[[1]], 
+               aes(x=x, 
+                   y=y, 
+                   group=group, 
+                   fill = counties[[1]]$cases), 
+               color = "black",
+               size = 0.1) +  
+  geom_polygon(data=states[[1]], 
+               aes(x=x, 
+                   y=y, 
+                   group=group), 
+               color = "red", 
+               fill = alpha(0.01)) + 
+  coord_equal() +
+  #theme_map() +
+  theme(legend.position="none") +
+  scale_fill_gradient(low = "yellow", high = "blue", na.value = NA)+
+#scale_fill_continuous(name = "COVID-cases" , colours = "blue") +
+  theme_void() + ggtitle("COVID 19 cases in US ")
+   
+  
+
+ 
+
+```
+
+
+
+```{r}
+#install.packages("usmap")
+library(usmap)
+library(ggplot2)
+ 
+
+ plot_usmap(data = census_04, values = "deaths", color = "white") + 
+  scale_fill_continuous(name = "COVID-deaths", label = scales::comma) + 
+  theme(legend.position = "right") + ggtitle("COVID 19 in US ")
+ 
+ ###
+ states <- plot_usmap("states", 
+                     color = "red",
+                     fill = alpha(0.01)) 
+counties <- plot_usmap(data = census_04, 
+                       values = "deaths",
+                       color = "black",
+                       size = 0.1)
+
+ggplot() +  
+  geom_polygon(data=counties[[1]], 
+               aes(x=x, 
+                   y=y, 
+                   group=group, 
+                   fill = counties[[1]]$deaths), 
+               color = "black",
+               size = 0.1) +  
+  geom_polygon(data=states[[1]], 
+               aes(x=x, 
+                   y=y, 
+                   group=group), 
+               color = "red", 
+               fill = alpha(0.01)) + 
+  coord_equal() +
+  #theme_map() +
+  theme(legend.position="none") +
+  scale_fill_gradient(low = "yellow", high = "blue", na.value = NA)+
+#scale_fill_continuous(name = "COVID-cases" , colours = "blue") +
+  theme_void() + ggtitle("COVID 19 deaths in US ")
+   
+  
+  
+  
+```
+
+
+```{r}
+# Change the color
+ggplot(data=census_04, aes(x=date, y=cases, group=1)) +
+  geom_line(color="red") + ggtitle("COVID 19 in US ")
+
+ggplot(data=census_04, aes(x=date, y=deaths, group=1)) +
+  geom_line(color="red") + ggtitle("COVID 19 in US ")
+
+```
+
+
+```{r}
+census_04_01 <- census_04[,c(1,8,9)]
+census_04_02 <- census_04_01 %>% gather("cases", "value", -date)
+
+ggplot(census_04_02 , aes(date, value)) +   
+  geom_bar(aes(fill = cases), position = "dodge", stat="identity") + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + ggtitle("COVID 19 in US ")
+
+```
+
+
+
+
+ 
+```{r}
+library(plotly)
+
+ 
+
+fig1 <- plot_ly(census_04, x = ~census_04$date, y = ~census_04$cases, name = "Gaps",  type = 'scatter', mode = 'lines') 
+ 
+
+fig1
+
+###
+ 
+
+ 
+
+fig2 <- plot_ly(census_04, x = ~census_04$date, y = ~census_04$deaths, name = "Gaps",  type = 'scatter', mode = 'lines') 
+ 
+
+fig2
+
+```
+
+
+```{r}
+census_04_04 <- census_04[,c(1,6,8,9)]
+census_04_05 <- census_04_04 %>% gather("cases", "value", -c(date, state))
+
+f <- ggplot(census_04_05 , aes(reorder(x=state, value), value)) +   
+  geom_bar(aes(fill = cases), position = "dodge", stat="identity") + theme(plot.title = element_text(size =10),axis.text.x = element_text(size =7,angle = 65, hjust = 1) ) +xlab("States in US")+ ggtitle("COVID 19 in US ")
+
+ggplotly(f)
+
+```
+
+
+ 
+
+
+
+
+```{r}
+plot(census_04$Population, census_04$cases, main = "COVID19 -cases",
+     xlab = "Population", ylab = "COVID cases",
+     pch = 19, frame = FALSE)
+abline(lm(census_04$cases ~ census_04$Population, data = census_04), col = "blue")
+
+
+plot(census_04$Population, census_04$deaths, main = "COVID19 -deaths",
+     xlab = "Population", ylab = "COVID deaths",
+     pch = 19, frame = FALSE)
+abline(lm(census_04$cases ~ census_04$Population, data = census_04), col = "blue")
+
+```
+
