@@ -1,6 +1,6 @@
 # COVID19
  
-Each observation of an affected or dead due to COVID-19 is a story - With all respect, this is how I take on the analysis.
+Each observation of an affected or dead individual due to COVID-19 is a story - With all respect, this is how I take on the analysis.
 
 ------------------------------------------------------------------------------------------------------------------
 The New York Times is releasing a series of data files with cumulative counts of coronavirus cases in the United States, at the state and county level, over time. We are compiling this time series data from state and local governments and health departments in an attempt to provide a complete record of the ongoing outbreak.
